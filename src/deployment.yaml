@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: simulador-container
-        image: claysilva/simulador-do-caos:v1
+        image: claysilva/simulador-do-caos:v2
         ports:
         - containerPort: 3000
 ---
