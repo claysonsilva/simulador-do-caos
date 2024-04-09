@@ -43,7 +43,7 @@ app.put("/stress/cpu", (req: Request, res: Response) => {
 
 app.get("/health", (req: Request, res: Response) => {
     if (saudavel) {
-        res.send("ok");
+        res.send("OK -- FUNCIONANDO");
     } else {
         res.status(500).send("Internal Server Error");
     }
