@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulador-do-caos
+spec:
+  selector:
+    matchLabels:
+      app: simulador-labels
+  template:
+    metadata:
+      labels:
+        app: simulador-labels
+    spec:
+      containers:
+      - name: simulador-container
+        image: claysilva/simulador-do-caos:v1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simulador-service
+spec:
+  selector:
+    app: simulador-labels
+  ports:
+  - port: 80
+    targetPort: 8080
+    nodePort: 30000
+  type: NodePort
+
